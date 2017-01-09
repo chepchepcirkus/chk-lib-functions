@@ -1,0 +1,11 @@
+{
+    "name": "chepchepcirkus/chk-lib-functions",
+    "description": "Usefull bash function library",
+    "authors": [
+        {
+            "name": "Steven Servanton",
+            "email": "s.servanton@gmail.com"
+        }
+    ],
+    "require": {}
+}
