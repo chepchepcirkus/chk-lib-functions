@@ -12,7 +12,13 @@
 #@desc
 #@args string : string to echo | state : error, warning, success | string : log file path
 function chk_echo () {
-	chk_prefix=""
+    chk_prefix=""
+    if [ "$3" == "" ]
+    then
+        log_file_path=$chk_var_d/cli.log
+    else
+        log_file_path=$3
+    fi
     case $2 in
         # Error state
         error) chk_prefix="[ ERROR ] " ;;
@@ -21,7 +27,7 @@ function chk_echo () {
         # Success state
         success) chk_prefix="[ SUCCESS ] " ;;
     esac
-    echo $chk_prefix $1 >> $3
+    echo $chk_prefix $1 >> $log_file_path
 }
 
 function render_chk_echo () {
